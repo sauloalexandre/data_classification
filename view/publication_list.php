@@ -157,10 +157,6 @@ foreach($types as $nm) {
 
             if("#START#" != $temp) {
                 usort($list2[$nm][$temp], "cmpProcess"); 
-                foreach($list2[$nm][$temp] as $item2) {
-                    echo "<br>[{$nm}] [".$temp."] - ".$item2->get("process");
-                }
-
                 if(!empty($list2[$nm][$temp]))
                     createFile('cinco2_'.$nm.'_'.str_replace(" ","_", trim(substr($temp, 0, 20))), $list2[$nm][$temp]);
 
@@ -176,11 +172,7 @@ foreach($types as $nm) {
 
     if (!empty($list2[$nm][$temp])) {
         usort($list2[$nm][$temp], "cmpProcess"); 
-        createFile('cinco2_'.$nm.'_'.str_replace(" ","_", trim(substr($temp, 0, 20))), $list2[$nm][$temp]);
-
-        foreach($list2[$nm][$temp] as $item) {
-            echo "<br>[{$nm}] [".$temp."] - ".$item->get("process");
-        }    
+        createFile('cinco2_'.$nm.'_'.str_replace(" ","_", trim(substr($temp, 0, 20))), $list2[$nm][$temp]);   
     }
 
 }
